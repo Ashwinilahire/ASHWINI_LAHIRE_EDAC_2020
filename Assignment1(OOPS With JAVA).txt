@@ -1,0 +1,437 @@
+﻿						Assignment 1 - OOPS With JAVA
+
+1.) Write a program to print hello world. Run and compile it on command prompt
+
+  class Test 
+{
+	public static void main(String[] args)
+	{
+		System.out.print("Hello World");
+	}
+}
+	
+
+
+2.) Write a program to declare a variable named rollNo of integer type. Assign it a value (let say 100) to it and print the 
+following statement roll no = 100 .
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+		int rollNo = 10;
+		System.out.print("roll no = "+rollNo);
+	}
+}
+
+
+3.) Find the result of following expressions. You need to determine the primitive data type of the variable by looking 
+carefully the given expression and initialize variables by any random value.
+
+A. y = x2 + 3x - 7 (print value of y) 
+B. y = x++ + ++x (print value of x and y) 
+C. z = x++ - --y - --x  +  x++ (print value of x ,y and z)
+D. z = x && y || !(x || y)  (print value of z) [ x, y, z are boolean variables ]
+
+
+A.
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+		double x = 3;
+		double y=(x*x)+(3*x)-7;
+		System.out.print("Value of y = "+y);
+		
+
+	}
+}
+
+
+
+
+B. 
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		
+		int x=3;
+		int y=x++ + ++x;
+		System.out.println("Value of x= "+x);
+		System.out.println("Value of y= "+y);
+		
+		
+
+	}
+}
+
+
+
+
+C.
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		int x=2;
+		int y=3;
+		int z = x++ - --y - --x + x++;
+		System.out.println("Value of x= "+x);
+		System.out.println("Value of y= "+y);
+		System.out.println("Value of z= "+z);
+
+
+	}
+}
+
+
+
+D.
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+
+
+		boolean x=false;
+		boolean y=false;
+		boolean z = x && y || !(x || y);
+		System.out.print("Value of z= "+z);
+
+	}
+}
+
+
+4.)  Write a program that initializes 2 byte type of variables. Add the values of these variables and store in a byte type of variable. 
+[Note: primitive down casting is required in this program ] .
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+		byte num_1=5;
+		byte num_2=4;
+		byte add = (byte)(num_1+num_2);
+		System.out.print("Addition of two byte numbers is "+add);
+
+	}
+}
+
+5.)Write a program that takes user’s name as command line argument and prints Welcome <entered user name>.
+
+ class Test 
+{
+	public static void main(String[] args)
+	{
+		String name = args[0];
+		System.out.print("Welcome "+name);
+
+	}
+}
+
+6.) Write a program that takes radius of a circle as input. Read the entered radius using Scanner class. 
+Then calculate and print the area and circumference of the circle.
+
+
+import java.lang.Math.*;
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		double radius;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter radius of circle:");
+		radius = sc.nextDouble();
+		double circumference = 2 * Math.PI * radius;
+		double area = Math.PI * radius * radius;
+		System.out.println("Circumference of circle = "+circumference );
+		System.out.println("Area of circle = "+area);
+
+	}
+}
+
+
+7.) Write a program to calculate sum of 5 subject’s marks & find percentage. Take the obtained marks from user using Scanner class. 
+Output should be in this format [ percentage marks = 99 % ]. Use concatenation operator here.
+
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		int marks;
+		int total_Marks=0;
+		double percentage;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter marks:");
+		for(int i=1; i<=5;i++)
+		{
+			marks = sc.nextInt();
+			total_Marks = total_Marks + marks;
+			
+		}
+		percentage = (total_Marks *100)/500;
+		System.out.println("Percentage marks = "+percentage+" %");
+
+	}
+}
+
+
+8.) Write a program to find the simple interest. Take the principle amount, rate of interest and time from user using Scanner class 
+
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		double principal_Amount;
+		double rate_Of_Interest;
+		double Time;
+		double simple_Interest;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the value of principalAmount:");
+		principal_Amount = sc.nextDouble();
+		System.out.println("Enter the value of Rate:");
+		rate_Of_Interest= sc.nextDouble();
+		System.out.println("Enter the value of Time:");
+		Time = sc.nextInt();
+		simple_Interest = (principal_Amount * rate_Of_Interest * Time)/100;
+		System.out.println("Simple Interest = "+simple_Interest);
+
+	}
+}
+
+
+9) Write a program to read the days (eg. 670 days) as integer value using Scanner class.
+ Now convert the entered days into complete years, months and days and print them
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		int days,year,month;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter days:");
+		days = sc.nextInt();
+		year = days / 365;
+        		days = days% 365;
+		System.out.println("No of years:"+year);
+		month= days/ 12;
+		days = days % 12;
+		System.out.println("No of months:"+month);
+		System.out.println("No of days:"+days);
+		
+		
+
+	}
+}
+
+10.) Write a program to convert temperature from Fahrenheit to Celsius. 
+Take Fahrenheit as input using Scanner class. [ formula : C= 5*(f-32)/9 ]
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		double f, C;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Fahrenheit Value of Temperature:");
+		f=sc.nextDouble();
+		C=5*(f-32)/9;
+		System.out.println("Temperature in Celcius:"+C);
+		
+		
+
+	}
+}
+
+11.) Write a program to swap two numbers without using third variable
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		int num1;
+		int num2;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter first number:");
+		num1 = sc.nextInt();
+		System.out.println("Enter second number:");
+		num2 = sc.nextInt();
+		System.out.println("Before Swapping num1 and num2 are:"+"num1="+num1+" "+"num2="+num2);
+		num1 = num1 + num2;
+		num2 = num1 - num2;
+		num1 = num1 - num2;
+		System.out.println("After Swapping num1 and num2 are:"+"num1="+num1+" "+"num2="+num2);
+		
+		
+		
+
+	}
+}
+
+
+12.) In a company an employee is paid as under: If his basic salary is less than Rs. 10000, then HRA = 10% of basic salary and DA = 90% of basic salary. 
+If his salary is either equal to or above Rs. 10000, then HRA = Rs. 2000 and DA = 98% of basic salary. 
+If the employee's salary is input by the user write a program to find his gross salary. [ formula : GS= Basic + DA + HRA ]
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		double base_salary,hra,da,gs;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter basic salary:");
+		base_salary=sc.nextDouble();
+		if(base_salary<10000)
+		{
+			hra = (base_salary * 10)/100;
+			da = (90 * base_salary)/100;
+		}
+		else
+		{
+			hra=2000;
+			da = (base_salary * 98)/100;
+		}
+		gs = base_salary+da+hra;
+		System.out.println("Gross Salary:"+gs);
+		
+		
+		
+		
+
+	}
+}
+
+
+13.) Program to find greatest in 3 numbers. [ once using if else statement and then using ternary operator ( logical operator) ]  
+
+a) using if else if ladder
+
+ import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		int num1,num2,num3;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number 1:");
+		num1 = sc.nextInt();
+		System.out.println("Enter number 2:");
+		num2= sc.nextInt();
+		System.out.println("Enter number 3:");
+		num3 = sc.nextInt();
+		if(num1>num2 && num1>num3)
+		{
+			System.out.println(num1+" "+"is the largest number");
+		}
+		else if(num2>num3)
+		{
+			System.out.println(num2+" "+"is the largest number");
+		}
+		else 
+		{
+			System.out.println(num3+" "+"is the largest number");
+		}
+		
+
+	}
+}
+
+b) using ternary operator
+
+
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		int num1,num2,num3;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter number 1:");
+		num1 = sc.nextInt();
+		System.out.println("Enter number 2:");
+		num2= sc.nextInt();
+		System.out.println("Enter number 3:");
+		num3 = sc.nextInt();
+		int num4 = num3> (num1 >num2 ? num1 : num2) ? num3 : ((num1 > num2) ? num1 : num2);
+		System.out.println("Largest number:"+num4);
+
+	}
+}
+
+
+14.) Program to check that entered year is a leap year or not.
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		int year;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter year:");
+		year = sc.nextInt();
+		if(year%4==0)
+		{
+			System.out.println("Leap Year");
+		}
+		else
+		{
+			System.out.println("Not a Leap Year");
+		}
+
+	}
+}
+
+
+15.) Accept person’s gender (character m for male and f for female), age (integer), as input and then check whether person is eligible for marriage or not.
+
+
+import java.util.Scanner; 
+class Test 
+{
+	public static void main(String[] args)
+	{
+		char gender;
+		int age;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Select your Gender M/F");
+		gender = sc.next().charAt(0);
+		System.out.println("Enter your Age:");
+		age = sc.nextInt();
+		if(age>21 && (gender=='M' || gender=='m'))
+		{
+			System.out.println("You are a male and You are eligible for Marriage");
+		}
+		else if(age>18 && (gender=='f' || gender=='f'))
+		{
+			System.out.println("You are a female and you are eligble for Marriage");
+		}
+		else
+		{
+			System.out.println("You are not eligble for marraige");
+		}
+
+	}
+}
+
+
